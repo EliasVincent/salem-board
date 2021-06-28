@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel='manifest' href='./manifest.json'>
+
+    <script>
+      // Registering our Service worker
+      if('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('sw.js', { scope: './' })
+      }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Calligraffitti&display=swap"
+      rel="stylesheet"
+    />
+    <title>Document</title>
+    <style>
+      body {
+        font-family: "Calligraffitti", cursive;
+        margin: 0;
+        padding: 0;
+
+        background-image: url("./bg.jpg");
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: 100% 100%;
+      }
+
+      #container {
+        display: grid;
+        grid-template-rows: 1fr 1fr 1fr;
+        gap: 2em 2em;
+        grid-template-areas:
+          ". . ."
+          ". . ."
+          ". . .";
+        margin: 2rem;
+      }
+
+      .button {
+        border: 2px solid rgb(58, 0, 43);
+        background-color: black;
+        color: white;
+        padding: 1em;
+        width: 3rem;
+        height: 3rem;
+        text-align: center;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      #footer {
+        position: absolute;
+        color: white;
+        bottom: 0;
+        left: 0;
+        text-align: center;
+        width: 100%;
+      }
+
+      header{
+          color: white;
+          text-align: center;
+          width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root">
+        <header>
+            <h1>Salem Board</h1>
+        </header>
+      <div id="main">
+        <div id="container">
+          <div class="button" onclick="PlaySound('milk')">Milk</div>
+          <div class="button" onclick="PlaySound('ai')">Aiaiaiaiai</div>
+          <div class="button" onclick="PlaySound('cabin_fever')">
+            Cabin Fever
+          </div>
+          <div class="button" onclick="PlaySound('can_opener')">Can Opener</div>
+          <div class="button" onclick="PlaySound('doesnt_mean_i_care')">
+            Doesn't Mean I Care
+          </div>
+          <div class="button" onclick="PlaySound('privacy')">Privacy</div>
+          <div class="button" onclick="PlaySound('sing1')">Sing</div>
+          <div class="button" onclick="PlaySound('sorry')">I'm Sorry</div>
+          <div class="button" onclick="PlaySound('world_domination')">
+            World Domination
+          </div>
+        </div>
+      </div>
+      <div id="footer">From Sabrina the Teenage Witch. Pls don't sue me :(</div>
+    </div>
+
+    <script>
+      function PlaySound(melody) {
+        var path = "sounds\\";
+        var snd = new Audio(path + melody + ".ogg");
+        snd.play();
+      }
+    </script>
+  </body>
+</html>
