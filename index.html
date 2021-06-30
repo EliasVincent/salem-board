@@ -13,7 +13,7 @@
       href="https://fonts.googleapis.com/css2?family=Calligraffitti&display=swap"
       rel="stylesheet"
     />
-    <title>Document</title>
+    <title>Salem Board</title>
     <style>
       body {
         font-family: "Calligraffitti", cursive;
@@ -24,6 +24,9 @@
         background-repeat: no-repeat;
         background-attachment: fixed;
         background-size: 100% 100%;
+
+        text-align: center;
+
       }
 
       #container {
@@ -34,6 +37,8 @@
           ". . ."
           ". . ."
           ". . .";
+        grid-auto-flow: column;
+        justify-items: center;
         margin: 2rem;
       }
 
@@ -42,8 +47,8 @@
         background-color: black;
         color: white;
         padding: 1em;
-        width: 3rem;
-        height: 3rem;
+        width: 5rem;
+        height: 5rem;
         text-align: center;
 
         display: flex;
@@ -74,25 +79,25 @@
         </header>
       <div id="main">
         <div id="container">
-          <div class="button" onclick="PlaySound('milk')">Milk</div>
-          <div class="button" onclick="PlaySound('ai')">Aiaiaiaiai</div>
-          <div class="button" onclick="PlaySound('cabin_fever')">
+          <button class="button" onclick="PlaySound('milk')">Milk</button>
+          <button class="button" onclick="PlaySound('ai')">Aiaiaiaiai</button>
+          <button class="button" onclick="PlaySound('cabin_fever')">
             Cabin Fever
-          </div>
-          <div class="button" onclick="PlaySound('can_opener')">Can Opener</div>
-          <div class="button" onclick="PlaySound('doesnt_mean_i_care')">
+          </button>
+          <button class="button" onclick="PlaySound('can_opener')">Can Opener</button>
+          <button class="button" onclick="PlaySound('doesnt_mean_i_care')">
             Doesn't Mean I Care
-          </div>
-          <div class="button" onclick="PlaySound('privacy')">Privacy</div>
-          <div class="button" onclick="PlaySound('sing1')">Sing</div>
-          <div class="button" onclick="PlaySound('sorry')">I'm Sorry</div>
-          <div class="button" onclick="PlaySound('world_domination')">
+          </button>
+          <button class="button" onclick="PlaySound('privacy')">Privacy</button>
+          <button class="button" onclick="PlaySound('sing1')">Sing</button>
+          <button class="button" onclick="PlaySound('sorry')">I'm Sorry</button>
+          <button class="button" onclick="PlaySound('world_domination')">
             World Domination
-          </div>
+          </button>
         </div>
       </div>
       <div id="footer">From Sabrina the Teenage Witch. Pls don't sue me :(</div>
-    </div>
+    </button>
 
     <script>
       function PlaySound(melody) {
